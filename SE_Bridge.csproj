@@ -34,6 +34,10 @@
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Sailwind\Sailwind_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
+    <Reference Include="Crest, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Sailwind\Sailwind_Data\Managed\Crest.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -59,16 +63,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SE_ClothColToggler.cs" />
     <Compile Include="SE_Keel.cs" />
     <Compile Include="SE_BoatCustomData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SE_LadderData.cs" />
+    <Compile Include="SE_Outrigger.cs" />
     <Compile Include="SE_PartData.cs" />
     <Compile Include="SE_PartOptionData.cs" />
+    <Compile Include="SE_Bulwark.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy /y "SE_Bridge.dll" "C:\Program Files (x86)\Steam\steamapps\common\Sailwind\BepInEx\plugins\ShipyardExpansion"
-xcopy /y "SE_Bridge.dll" "E:\Unity workspace\exporte\ExportedProject\Assets\ShipyardExpansion"</PostBuildEvent>
+xcopy /y "SE_Bridge.dll" "E:\Unity workspace\exporte\ExportedProject\Assets\ShipyardExpansion"
+xcopy /y "SE_Bridge.dll" "E:\Unity workspace\Sailwind30\ExportedProject\Assets\ShipyardExpansion"</PostBuildEvent>
   </PropertyGroup>
 </Project>
