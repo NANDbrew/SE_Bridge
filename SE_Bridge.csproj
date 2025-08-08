@@ -38,6 +38,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Sailwind\Sailwind_Data\Managed\Crest.dll</HintPath>
     </Reference>
+    <Reference Include="Oculus.VR, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Sailwind\Sailwind_Data\Managed\Oculus.VR.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -63,6 +67,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MeshSwapper.cs" />
+    <Compile Include="ObjectToggler.cs" />
     <Compile Include="SE_ClothColToggler.cs" />
     <Compile Include="SE_Keel.cs" />
     <Compile Include="SE_BoatCustomData.cs" />
@@ -72,6 +78,7 @@
     <Compile Include="SE_PartData.cs" />
     <Compile Include="SE_PartOptionData.cs" />
     <Compile Include="SE_Bulwark.cs" />
+    <Compile Include="TrapdoorSetup.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
