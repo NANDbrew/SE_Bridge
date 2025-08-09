@@ -78,7 +78,6 @@
     <Compile Include="SE_PartData.cs" />
     <Compile Include="SE_PartOptionData.cs" />
     <Compile Include="SE_Bulwark.cs" />
-    <Compile Include="TrapdoorSetup.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
