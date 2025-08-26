@@ -7,13 +7,14 @@ namespace SE_Bridge
     {
         public SE_PartData[] parts;
         public SE_PartOptionData[] options;
-        public Mesh walkColMesh;
+        public Mesh embarkColMesh;
         public Mast[] masts;
         public WindClothSimple[] flags;
         public SE_LadderData[] ladders;
         public GPButtonTrapdoor[] doors;
         public MeshSwapper[] meshSwappers;
         public GPButtonSteeringWheel[] tillers;
+        public Transform walkCol;
 
         private void OnValidate()
         {

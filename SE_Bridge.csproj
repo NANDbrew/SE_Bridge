@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DoorColToggler.cs" />
     <Compile Include="MeshSwapper.cs" />
     <Compile Include="ObjectToggler.cs" />
     <Compile Include="SE_ClothColToggler.cs" />
