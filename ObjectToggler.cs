@@ -1,5 +1,4 @@
-﻿using System.Reflection;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace SE_Bridge
 {
@@ -24,11 +23,6 @@ namespace SE_Bridge
         {
             foreach (GameObject obj in parts)
             {
-                if (obj.GetComponent<GPButtonTrapdoor>() is GPButtonTrapdoor door)
-                {
-                    Transform col = (Transform)typeof(GPButtonTrapdoor).GetField("walkCol", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(door);
-                    if (col) col.gameObject.SetActive(state);
-                }
                 obj.SetActive(state);
             }
         }

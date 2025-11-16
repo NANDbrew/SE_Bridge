@@ -15,6 +15,9 @@ namespace SE_Bridge
         public MeshSwapper[] meshSwappers;
         public GPButtonSteeringWheel[] tillers;
         public Transform walkCol;
+        public GameObject[] tabletops;
+        public int firstAvailableIndex;
+        public bool Validate;
 
         private void OnValidate()
         {
@@ -24,6 +27,23 @@ namespace SE_Bridge
             doors = GetComponentsInChildren<GPButtonTrapdoor>();
             meshSwappers = GetComponentsInChildren<MeshSwapper>();
             tillers = GetComponentsInChildren<GPButtonSteeringWheel>();
+
+            firstAvailableIndex = 0;
+            int highest = 0;
+            for (int i = 0; i < masts.Length; i++)
+            {
+                if (masts[i].orderIndex >= firstAvailableIndex)
+                {
+                    firstAvailableIndex = masts[i].orderIndex + 1;
+                }
+                if (masts[i].orderIndex == highest)
+                {
+                    firstAvailableIndex = highest;
+                    Validate = true;
+                    return;
+                }
+            }
+            Validate = false;
         }
     }
 }
