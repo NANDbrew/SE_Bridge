@@ -16,6 +16,7 @@ namespace SE_Bridge
         public GPButtonSteeringWheel[] tillers;
         public Transform walkCol;
         public GameObject[] tabletops;
+        public BilgePump[] pumps;
         public int firstAvailableIndex;
         public bool Validate;
 
@@ -27,6 +28,7 @@ namespace SE_Bridge
             doors = GetComponentsInChildren<GPButtonTrapdoor>();
             meshSwappers = GetComponentsInChildren<MeshSwapper>();
             tillers = GetComponentsInChildren<GPButtonSteeringWheel>();
+            pumps = GetComponentsInChildren<BilgePump>();
 
             firstAvailableIndex = 0;
             int highest = 0;

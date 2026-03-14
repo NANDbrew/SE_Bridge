@@ -84,6 +84,7 @@
   <PropertyGroup>
     <PostBuildEvent>xcopy /y "SE_Bridge.dll" "C:\Program Files (x86)\Steam\steamapps\common\Sailwind\BepInEx\plugins\ShipyardExpansion"
 xcopy /y "SE_Bridge.dll" "E:\Unity workspace\exporte\ExportedProject\Assets\ShipyardExpansion"
-xcopy /y "SE_Bridge.dll" "E:\Unity workspace\Sailwind30\ExportedProject\Assets\ShipyardExpansion"</PostBuildEvent>
+xcopy /y "SE_Bridge.dll" "E:\Unity workspace\Sailwind30\ExportedProject\Assets\ShipyardExpansion"
+xcopy /y "SE_Bridge.dll" "E:\Unity workspace\Sailwind35\ExportedProject\Assets\ShipyardExpansion"</PostBuildEvent>
   </PropertyGroup>
 </Project>
