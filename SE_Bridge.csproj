@@ -71,6 +71,7 @@
     <Compile Include="MeshSwapper.cs" />
     <Compile Include="ObjectToggler.cs" />
     <Compile Include="SE_ClothColToggler.cs" />
+    <Compile Include="SE_Cladding.cs" />
     <Compile Include="SE_Keel.cs" />
     <Compile Include="SE_BoatCustomData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,7 +84,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy /y "SE_Bridge.dll" "C:\Program Files (x86)\Steam\steamapps\common\Sailwind\BepInEx\plugins\ShipyardExpansion"
-xcopy /y "SE_Bridge.dll" "E:\Unity workspace\exporte\ExportedProject\Assets\ShipyardExpansion"
+xcopy /y "SE_Bridge.dll" "E:\Unity workspace\Sailwind36.b1\ExportedProject\Assets\ShipyardExpansion"
 xcopy /y "SE_Bridge.dll" "E:\Unity workspace\Sailwind30\ExportedProject\Assets\ShipyardExpansion"
 xcopy /y "SE_Bridge.dll" "E:\Unity workspace\Sailwind35\ExportedProject\Assets\ShipyardExpansion"</PostBuildEvent>
   </PropertyGroup>
