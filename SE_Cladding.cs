@@ -11,7 +11,7 @@ namespace SE_Bridge
         private float baseImpactThreshold;
         private float baseImpactMultiplier;
         public float damageModifier = 3f;
-        private int basePrice;
+        public float materialQuantity;
 
         public void Awake()
         {
@@ -19,7 +19,8 @@ namespace SE_Bridge
             baseDurabilityDays = boatDamage.durabilityDays;
             baseImpactThreshold = boatDamage.minimumImpactVelocity;
             baseImpactMultiplier = boatDamage.impactDamageMult;
-            basePrice = this.GetComponent<BoatPartOption>().basePrice;
+            //materialQuantity = GetComponent<BoatPartOption>().basePrice;
+            GetComponent<BoatPartOption>().mass = Mathf.RoundToInt(260 * materialQuantity);
             gameObject.layer = 2;
         }
         public class Args : EventArgs
@@ -28,16 +29,18 @@ namespace SE_Bridge
         }
         public void SetPriceModifier(Args args)
         {
-            this.GetComponent<BoatPartOption>().basePrice = basePrice * args.arg;
+            this.GetComponent<BoatPartOption>().basePrice = Mathf.RoundToInt(materialQuantity * args.arg);
         }
-
 
         public void OnEnable()
         {
-            Material[] mats = new Material[2] { cleanableObject.GetComponent<Renderer>().materials[0], GetComponent<Renderer>().materials[1] };
+            var children = GetComponentsInChildren<Renderer>();
+            Material[] mats = new Material[2] { cleanableObject.GetComponent<Renderer>().materials[0], children[0].materials[1] };
 
-            this.GetComponent<Renderer>().materials = mats;
-
+            for (int c = 0; c < children.Length; c++)
+            {
+                children[c].materials = mats;
+            }
 
             boatDamage.durabilityDays = baseDurabilityDays * damageModifier;
             boatDamage.minimumImpactVelocity = baseImpactThreshold * damageModifier;
