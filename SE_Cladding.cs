@@ -34,6 +34,7 @@ namespace SE_Bridge
 
         public void OnEnable()
         {
+            if (boatDamage == null) return;
             var children = GetComponentsInChildren<Renderer>();
             Material[] mats = new Material[2] { cleanableObject.GetComponent<Renderer>().materials[0], children[0].materials[1] };
 
@@ -49,6 +50,8 @@ namespace SE_Bridge
 
         public void OnDisable()
         {
+            if (boatDamage == null) return;
+
             boatDamage.durabilityDays = baseDurabilityDays;
             boatDamage.minimumImpactVelocity = baseImpactThreshold;
             boatDamage.impactDamageMult = baseImpactMultiplier;
