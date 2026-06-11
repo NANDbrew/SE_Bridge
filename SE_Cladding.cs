@@ -15,10 +15,12 @@ namespace SE_Bridge
 
         public void Awake()
         {
-            if (!boatDamage) boatDamage = GetComponentInParent<BoatDamage>();
-            baseDurabilityDays = boatDamage.durabilityDays;
-            baseImpactThreshold = boatDamage.minimumImpactVelocity;
-            baseImpactMultiplier = boatDamage.impactDamageMult;
+            if (boatDamage != null)
+            {
+                baseDurabilityDays = boatDamage.durabilityDays;
+                baseImpactThreshold = boatDamage.minimumImpactVelocity;
+                baseImpactMultiplier = boatDamage.impactDamageMult;
+            }
             //materialQuantity = GetComponent<BoatPartOption>().basePrice;
             GetComponent<BoatPartOption>().mass = Mathf.RoundToInt(260 * materialQuantity);
             gameObject.layer = 2;
