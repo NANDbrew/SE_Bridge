@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using static SE_Bridge.SE_Cladding;
 
 namespace SE_Bridge
 {
@@ -29,20 +30,23 @@ namespace SE_Bridge
         {
             public int arg;
         }
-        public void SetPriceModifier(Args args)
+        public void SetPriceModifier(int rate)
         {
-            this.GetComponent<BoatPartOption>().basePrice = Mathf.RoundToInt(materialQuantity * args.arg);
+            this.GetComponent<BoatPartOption>().basePrice = Mathf.RoundToInt(materialQuantity * rate);
         }
 
         public void OnEnable()
         {
             if (boatDamage == null) return;
-            var children = GetComponentsInChildren<Renderer>();
-            Material[] mats = new Material[2] { cleanableObject.GetComponent<Renderer>().materials[0], children[0].materials[1] };
-
-            for (int c = 0; c < children.Length; c++)
+            if (cleanableObject != null)
             {
-                children[c].materials = mats;
+                var children = GetComponentsInChildren<Renderer>();
+                Material[] mats = new Material[2] { cleanableObject.GetComponent<Renderer>().materials[0], children[0].materials[1] };
+
+                for (int c = 0; c < children.Length; c++)
+                {
+                    children[c].materials = mats;
+                }
             }
 
             boatDamage.durabilityDays = baseDurabilityDays * damageModifier;
