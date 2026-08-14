@@ -8,6 +8,7 @@ namespace SE_Bridge
         public SE_PartData[] parts;
         public SE_PartOptionData[] options;
         public Mesh embarkColMesh;
+        public string embarkColName;
         public Mast[] masts;
         public WindClothSimple[] flags;
         public SE_LadderData[] ladders;
