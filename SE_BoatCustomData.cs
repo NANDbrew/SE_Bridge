@@ -46,6 +46,18 @@ namespace SE_Bridge
                     return;
                 }
             }
+
+            foreach (var winch in GetComponentsInChildren<GPButtonRopeWinch>())
+            {
+                if (winch.transform.localEulerAngles.x % 90 == 0)
+                {
+                    float rot = UnityEngine.Random.Range(-1, 1) < 0 ? -0.2f : 0.2f;
+                    //winch.transform.Rotate(rot, 0f, 0f);
+                    winch.transform.localEulerAngles = new Vector3(winch.transform.localEulerAngles.x + 0.1f, winch.transform.localEulerAngles.y, winch.transform.localEulerAngles.z);
+                    Debug.Log("rotated " + winch.name + " by " + rot);
+                }
+            }
+
             Validate = false;
         }
     }
